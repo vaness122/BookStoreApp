@@ -1,0 +1,51 @@
+﻿@model BookStoreApp.Models.Book
+@{
+    ViewData["Title"] = "Edit Book";
+}
+
+<h1 style="text-align:center">Edit Book</h1>
+
+<div div class="container border border-dark " style="width:425px;height:510px">
+
+<form asp-action="Edit" method="post">
+    <input type="hidden" asp-for="BookId" />
+
+    <div class="form-group">
+        <label asp-for="Title">Title</label>
+        <textarea asp-for="Title" class="form-control" style="width:350px; resize: vertical; min-height: 50px;"></textarea>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Description">Description</label>
+        <textarea asp-for="Description" class="form-control" style="width:350px; resize: vertical; min-height: 50px;"></textarea>
+       
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Author">Author</label>
+        <input asp-for="Author" class="form-control" style="width:350px"  />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="ISBN">ISBN</label>
+        <input asp-for="ISBN" class="form-control" style="width:350px" />
+
+    </div>
+
+    <div class="form-group">
+        <label asp-for="PublishedYear">Published Year</label>
+        <input asp-for="PublishedYear" class="form-control" style="width:350px" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Price">Price</label>
+            <input asp-for="Price" class="form-control" style="width:350px" />
+    </div>
+
+    <p></p>
+    <div class="text-center">
+    <button type="submit" class="btn btn-success" >Save</button>
+</div>
+    
+</form>
+</div>

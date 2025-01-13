@@ -1,0 +1,40 @@
+﻿@model BookStoreApp.Models.Book
+
+@{
+    ViewData["Title"] = "Book Details";
+}
+
+<h1 class="text-center">Book Details</h1>
+
+<div class="container border border-dark " style="width:425px;height:455px">
+    <dl class="dl-horizontal">
+        <dt>Title</dt>
+        <dd>@Model.Title</dd>
+
+        <dt>Description</dt>
+        <dd>@Model.Description</dd>
+
+       <dt>Author</dt>
+       <dd>@Model.Author</dd>
+
+       <dt>ISBN</dt>
+       <dd>@Model.ISBN</dd>
+
+       <dt>Published Year</dt>
+       <dd>@Model.PublishedYear</dd>
+
+        <dt>Price</dt>
+        <dd>$@Model.Price</dd>
+
+      <div class="text-center">
+        <a asp-action="Edit" asp-route-id="@Model.BookId" class="btn btn-primary">Edit</a>
+        <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+</div>
+
+
+
+    </dl>
+
+</div>
+
+

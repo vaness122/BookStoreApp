@@ -1,0 +1,40 @@
+﻿@model IEnumerable<BookStoreApp.Models.Cart>
+
+<h2 style="text-align:center;">Your Shopping Cart</h2>
+
+<div class="container border border-dark " style="width:300px">
+
+@if (Model.Any())
+{
+    foreach (var cartItem in Model)
+    {
+        <div class="text-center">
+            <h4>@cartItem.Book.Title</h4>
+            <p>Author: @cartItem.Book.Author</p>
+            <p>Quantity: @cartItem.Quantity</p>
+            <p>Price: $@cartItem.Book.Price</p>
+
+        
+           
+        </div>
+
+        <div class="text-center">
+        <form method="post" asp-action="RemoveFromCart" asp-route-bookId="@cartItem.Book.BookId">
+            <button type="submit" class="btn btn-danger ">Remove from Cart</button>
+        </form>
+        </div>
+        <p></p>
+       
+       
+    }
+
+
+
+    
+}
+else
+{
+    <p>Your cart is empty!</p>
+}
+
+</div>

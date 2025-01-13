@@ -1,0 +1,69 @@
+﻿
+@model IEnumerable<BookStoreApp.Models.Book>
+
+    @{
+        ViewData["Title"] = "Books";
+     }
+
+     <h1>Books</h1>
+
+     <p>
+         <a asp-action="Create" class="btn btn-primary">Create New</a>
+     </p>
+
+
+     <table class="table">
+         <thead>
+             <tr>
+                 <th>Action</th>
+                <th>Title</th>
+                
+                <th>Author</th>
+               
+               
+                <th>Price</th>
+                <th>Cart</th>
+             </tr>
+         </thead>
+
+         <tbody>
+             @foreach (var item in Model)
+        {
+            <tr>
+
+                <td>
+
+                    <a  class="text-decoration-none btn btn-secondary"   asp-action="Edit" asp-route-id="@item.BookId">Edit</a>
+                    <a class="text-decoration-none btn btn-secondary" asp-action="Details" asp-route-id="@item.BookId">Details</a>
+                    <a class="text-decoration-none btn btn-danger" asp-action="Delete" asp-route-id="@item.BookId">Delete</a>
+                </td>
+                <td>@item.Title </td>
+               
+                <td>@item.Author</td>
+                
+                
+                <td>$@item.Price</td>
+
+                <td>
+
+
+
+
+                    <a class="text-decoration-none btn btn-success" asp-controller="Cart" asp-action="AddToCart" asp-route-bookId="@item.BookId">Add to Cart</a>
+
+
+                <td>
+            </tr>
+        }
+
+
+
+
+
+         </tbody>
+
+
+
+
+
+     </table>
